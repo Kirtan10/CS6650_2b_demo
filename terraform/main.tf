@@ -45,6 +45,7 @@ resource "docker_image" "app" {
   build {
     # relative path from terraform/ → src/
     context = "../src"
+    platform = "linux/amd64"
     # Dockerfile defaults to "Dockerfile" in that context
   }
 }
