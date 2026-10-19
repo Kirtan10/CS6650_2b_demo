@@ -1,0 +1,12 @@
+{"time":"2026-10-19T14:25:23.853658133Z","level":"INFO","msg":"request","method":"GET","endpoint":"/products/:productId","path":"/products/1","status":200,"duration_ms":1.33,"bytes":116,"client_ip":"192.168.65.1"}
+{"time":"2026-10-19T14:25:23.889920799Z","level":"INFO","msg":"request","method":"GET","endpoint":"/products/:productId","path":"/products/999999","status":404,"duration_ms":0.962,"bytes":97,"client_ip":"192.168.65.1"}
+{"time":"2026-10-19T14:25:23.917753174Z","level":"INFO","msg":"request","method":"GET","endpoint":"/products/:productId","path":"/products/abc","status":404,"duration_ms":0.075,"bytes":120,"client_ip":"192.168.65.1"}
+{"time":"2026-10-19T14:25:23.971189549Z","level":"ERROR","msg":"panic recovered","error":"injected fault for testing the 500 response","path":"/products/1"}
+{"time":"2026-10-19T14:25:23.971248008Z","level":"INFO","msg":"request","method":"GET","endpoint":"/products/:productId","path":"/products/1","status":500,"duration_ms":3.113,"bytes":60,"client_ip":"192.168.65.1"}
+{"time":"2026-10-19T14:25:23.996837966Z","level":"INFO","msg":"request","method":"POST","endpoint":"/products/:productId/details","path":"/products/1/details","status":204,"duration_ms":0.137,"bytes":-1,"client_ip":"192.168.65.1"}
+{"time":"2026-10-19T14:25:24.019784424Z","level":"INFO","msg":"request","method":"GET","endpoint":"/products/:productId","path":"/products/1","status":200,"duration_ms":0.204,"bytes":122,"client_ip":"192.168.65.1"}
+{"time":"2026-10-19T14:25:24.045137924Z","level":"INFO","msg":"request","method":"POST","endpoint":"/products/:productId/details","path":"/products/1/details","status":400,"duration_ms":0.096,"bytes":99,"client_ip":"192.168.65.1"}
+{"time":"2026-10-19T14:25:24.127198883Z","level":"INFO","msg":"request","method":"POST","endpoint":"/products/:productId/details","path":"/products/abc/details","status":400,"duration_ms":0.047,"bytes":125,"client_ip":"192.168.65.1"}
+{"time":"2026-10-19T14:25:24.183336091Z","level":"INFO","msg":"request","method":"POST","endpoint":"/products/:productId/details","path":"/products/999999/details","status":404,"duration_ms":0.077,"bytes":97,"client_ip":"192.168.65.1"}
+{"time":"2026-10-19T14:25:24.202660424Z","level":"ERROR","msg":"panic recovered","error":"injected fault for testing the 500 response","path":"/products/1/details"}
+{"time":"2026-10-19T14:25:24.203128008Z","level":"INFO","msg":"request","method":"POST","endpoint":"/products/:productId/details","path":"/products/1/details","status":500,"duration_ms":0.895,"bytes":60,"client_ip":"192.168.65.1"}
