@@ -1,0 +1,26 @@
+# Same master/worker pattern as HW3.
+#   cd locust && CLIENT=fast WAIT=normal docker compose up --scale worker=4
+#   open http://localhost:8089
+# Host to enter in the UI:
+#   local server  -> http://host.docker.internal:8080
+#   ECS server    -> http://<TASK_PUBLIC_IP>:8080
+services:
+  master:
+    image: locustio/locust:2.29.1
+    ports:
+      - "8089:8089"
+    volumes:
+      - ./:/mnt/locust
+    environment: &env
+      - CLIENT=${CLIENT:-fast}
+      - WAIT=${WAIT:-normal}
+      - MAX_ID=${MAX_ID:-1000}
+      - STEP_SHAPE=${STEP_SHAPE:-}
+    command: -f /mnt/locust/locustfile.py --master
+
+  worker:
+    image: locustio/locust:2.29.1
+    volumes:
+      - ./:/mnt/locust
+    environment: *env
+    command: -f /mnt/locust/locustfile.py --worker --master-host master

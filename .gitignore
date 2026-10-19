@@ -1,4 +1,27 @@
 **.tfvars
 **.tfstate
 **.tfstate.*
-**/.terraform/
+**/.terraform/# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+.terraform.tfstate.lock.info
+
+# Secrets / env
+.env
+*.pem
+*.key
+
+# Go binaries
+src/product-service
+*.exe
+
+# Python / OS
+__pycache__/
+.DS_Store
