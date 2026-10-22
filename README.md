@@ -392,10 +392,3 @@ Each line's `endpoint` is the route template, `path` the actual URL, `status` th
 
 I'd look at the **dashboard** to notice and scope a problem while it's happening: whether traffic changed, whether errors are spiking, which endpoint's p95 moved, and when. I'd look at the **logs** afterwards to explain a specific problem: exactly which requests failed, with which paths and status codes, at what time, especially when nobody had Grafana open when it happened. In the misconfigured run above, the dashboard showed *that* every request was a 404 on an `unmatched` route; the logs showed *why*, with paths like `//products/42`.
 
-## Design questions
-
-The answers to "How would you design a scalable backend for the whole `api.yaml`?" and "What does it mean that Terraform is declarative?" are in [`docs/INTERVIEW_PREP.md`](docs/INTERVIEW_PREP.md), along with walkthroughs of the spec, the request path through Gin, and the Terraform files.
-
-## Repository hygiene
-
-`.gitignore` keeps Terraform state (`*.tfstate`, `.terraform/`), variable files (`*.tfvars`), secrets (`.env`, keys) and built binaries out of the repository. `.terraform.lock.hcl` is committed so everyone gets the same provider versions.
